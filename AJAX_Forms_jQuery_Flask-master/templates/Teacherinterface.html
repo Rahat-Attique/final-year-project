@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+
+
+ <link rel="stylesheet" href="static/js/l1.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div class="bg"></div>
+<script src="/static/js/final.js"></script>
+
+<script>
+
+function changeDivImage()
+
+    {var e = document.getElementById("country");
+				var result = e.options[e.selectedIndex].text;
+				
+				<!-- document.getElementById("my-table").innerHTML = result; -->
+	
+        var imgPath = new String();
+		
+        imgPath = document.getElementById("my-table").src;
+		<!-- document.getElementById("my-table").innerHTML =imgPath; -->
+
+        if( document.getElementById("my-table").style.backgroundImage=="url(/static/images/bg2.jpg)")
+        {
+            document.getElementById("my-table").style.backgroundImage = "url(/static/images/c10.jpg)";
+			 var imgPath=new String();
+			 imgPath=document.getElementById("my-table").style.backgroundImage;
+
+			
+        }
+		
+		
+        else if(imgPath = "(/static/images/c10.jpg)")
+		{
+            document.getElementById("my-table").style.backgroundImage = "url(/static/images/bg2.jpg)";
+		}
+		else 
+		 {
+            document.getElementById("my-table").style.backgroundImage = "url(/static/images/c7.jpg)";
+        }
+
+
+    }
+		function GetSelectedValue(){
+				var e = document.getElementById("country");
+				var result = e.options[e.selectedIndex].value;
+				 document.getElementById("my-table").style.backgroundImage =result;
+			<!-- document.getElementById("my-table").innerHTML = result; -->
+			
+			  
+		}
+      function bgs(){
+	  
+	  	alert(document.getElementById("my-table").style.backgroundImage);
+		var b=document.getElementById("my-table").style.backgroundImage;
+		var content = '';
+  content = b.join('\r\n');
+// any kind of extension (.txt,.cpp,.cs,.bat)
+var filename = "hello.txt";
+
+var blob = new Blob([content], {
+ type: "text/plain;charset=utf-8"
+});
+
+saveAs(blob, filename);
+
+
+	  }
+  
+function showTable(){
+document.getElementById('table1').style.visibility = "visible";
+document.getElementById('table').style.visibility = "hidden";
+document.getElementById('table3').style.visibility = "hidden";
+document.getElementById('table2').style.visibility = "hidden";
+}
+function showTable2(){
+document.getElementById('table3').style.visibility = "visible";
+document.getElementById('table').style.visibility = "hidden";
+document.getElementById('table1').style.visibility = "hidden";
+document.getElementById('table2').style.visibility = "hidden";
+}
+function hideTable(){
+document.getElementById('table1').style.visibility = "hidden";
+}
+function show(){
+  <!-- document.getElementById("table").style.display="block"; -->
+document.getElementById('table').style.visibility = "visible";
+document.getElementById('table1').style.visibility = "hidden";
+document.getElementById('table3').style.visibility = "hidden";
+document.getElementById('table2').style.visibility = "hidden";
+}
+function show3(){
+  <!-- document.getElementById("table").style.display="block"; -->
+document.getElementById('table2').style.visibility = "visible";
+document.getElementById('table1').style.visibility = "hidden";
+document.getElementById('table3').style.visibility = "hidden";
+document.getElementById('table').style.visibility = "hidden";
+}
+function hide(){
+document.getElementById('table').style.visibility = "hidden";
+}
+function hide3(){
+document.getElementById('table2').style.visibility = "hidden";
+}
+function hide2(){
+document.getElementById('table3').style.visibility = "hidden";
+}
+<!-- function hide2(){ -->
+<!-- document.getElementById('table2').style.visibility = "hidden"; -->
+<!-- }function hide3(){ -->
+<!-- document.getElementById('table3').style.visibility = "hidden"; -->
+<!-- } -->
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+/////////////////////////////////////////////////////////////////////////////////
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+////////////////////////////////////////////////////////////////////////////////
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  var nodeCopy = document.getElementById(data).cloneNode(true);
+  nodeCopy.id = "newId"; /* We cannot use the same ID */
+  ev.target.appendChild(nodeCopy);
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	function myf(){
+	if(document.getElementsByTagName){  
+    var table = document.getElementById("my-table");
+	var myArray = [];
+	 var retString = '';
+var ret = [];
+ for (var i = 0, row; row = table.rows[i]; i++)  {
+  myArray.push( [] );
+}
+
+    for (var i = 0, row; row = table.rows[i]; i++) {
+	row = table.rows[i];
+	
+
+    //rows would be accessed using the "row" variable assigned in the for loop
+     for (var j = 0, col; col = row.cells[j]; j++) {
+
+		
+     //columns would be accessed using the "col" variable assigned in the for loop
+         <!-- alert(col.innerHTML);    -->
+		//Will give you the html content of the td
+        <!-- alert('col>>'+col.innerText);    //Will give you the td value -->
+		 <!-- array.push(col.innerHTML) + '<br />'; -->
+		 if(col.innerHTML=='<img src="/static/images/s8.png" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'||
+			 col.innerHTML=='<img src="/static/images/B.png" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'||
+			  col.innerHTML=='<img src="/static/images/s1.png" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'||
+			   col.innerHTML=='<img src="/static/images/s2.png" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'||
+			   col.innerHTML=='<img src="/static/images/s4.jpg" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29" "="">'||
+			 col.innerHTML=='<img src="/static/images/s6.png" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'||
+			 col.innerHTML=='<img src="/static/images/s7.jpg" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'||
+			 col.innerHTML=='<img src="/static/images/s5.jpg" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">')
+		
+		 
+		myArray[i].push("B")  ;
+		
+		// Goal
+
+	    else if (col.innerHTML=='<img src="/static/images/g8.png" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29" "="">')
+	
+      myArray[i].push("G")  ;
+	  //Starting
+
+	    else if (col.innerHTML=='<img src="/static/images/st5.jpg" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29" "="">')
+	
+      myArray[i].push("S")  ;
+	  /////Reward
+	  else if (col.innerHTML=='<img src="/static/images/c1.jpg" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'||
+	  col.innerHTML=='<img src="/static/images/c5.jpg" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'||
+	  col.innerHTML=='<img src="/static/images/c6.jpg" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'||
+	  col.innerHTML=='<img src="/static/images/c2.jpg" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'||
+	  col.innerHTML=='<img src="/static/images/c3.jpg" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'||
+	  col.innerHTML=='<img src="/static/images/c4.jpg" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'||
+	  col.innerHTML=='<img src="/static/images/c7.jpg" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'||
+	  col.innerHTML=='<img src="/static/images/c8.jpg" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'||
+	  col.innerHTML=='<img src="/static/images/c9.jpg" id="newId" draggable="true" ondragstart="drag(event)" width="46" height="29">'
+	  )
+	
+      myArray[i].push("T")  ;
+	  ///opening
+		else{
+		  myArray[i].push("O");
+		}
+		
+    }}
+		var b=document.getElementById("my-table").style.backgroundImage;
+        
+		myArray.splice(i+1, 0, b);
+      
+console.log(myArray);
+
+
+var content = '';
+  content = myArray.join('\r\n');
+  var t=content.replace( /,/g," ");
+// any kind of extension (.txt,.cpp,.cs,.bat)
+var filename = "scenario.txt";
+
+var blob = new Blob([t], {
+ type: "text/plain;charset=utf-8"
+});
+
+saveAs(blob, filename);
+
+}
+}
+
+function mall(){
+myf();
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////	
+
+function switchVisible() {
+           
+
+                if (document.getElementById('table2').style.display == 'none') {
+                    document.getElementById('table2').style.display = 'block';
+                    document.getElementById('table3').style.display = 'none';
+                }
+                else if (document.getElementById('table3').style.display == 'none'){
+                    document.getElementById('table2').style.display = 'none';
+                    document.getElementById('table3').style.display = 'block';
+                }
+				 else if (document.getElementById('table').style.display == 'none'){
+                    document.getElementById('table2').style.display = 'none';
+                    document.getElementById('table').style.display = 'block';
+                }
+				else {
+                    document.getElementById('table2').style.display = 'none';
+                    document.getElementById('table3').style.display = 'block';
+                }
+            }
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+//Hidng one table when another table is shown
+
+</script>
+
+<script type="text/javascript">
+
+
+
+ var img = new String();
+
+      img =document.getElementById('my-table');
+	 <!-- .style.backgroundImage; -->
+	imgar=["/static/images/c7.jpg","/static/images/c8.jpg","/static/images/c9.jpg","/static/images/c10.jpg"];
+	var imgind=1;
+    function chni(){
+	img.setAttribute("src",imgar[imgind]);
+	imgind++;
+	
+}
+</script>
+<script>
+function ch(){
+// Get the image id, style and the url from it
+var img = document.getElementById('my-table'),
+  style = img.currentStyle || window.getComputedStyle(img, false),
+  bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+
+// Display the url to the user
+console.log('Image URL: ' + bi);
+}
+</script>
+<style>
+
+select {
+ height: 52px;
+  width: 30%;
+    margin: 2px 0 0 0;
+  background: rgb(243, 165, 0);
+  cursor: pointer;
+  color: #FFF;
+  text-align-last:center;
+  font-family:  sans-serif;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;}
+body,html {
+
+   height: 100%;
+  margin: 0;
+}
+.bg {
+  /* The image used */
+  background-image: url("/static/images/i2.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+<!-- body { -->
+  <!-- font-family: Arial; -->
+  <!-- color: white; -->
+<!-- } -->
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  <!-- background-color: #111; -->
+}
+
+.right {
+  right: 0;
+  <!-- background-color: red; -->
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+<!-- .centered img { -->
+  <!-- width: 150px; -->
+  <!-- border-radius: 50%; -->
+<!-- } -->
+
+</style>
+
+<body>
+
+<div class="split left">
+<div>
+   <div id="addColumn" class="add">
+    <div id="addColumnChild">Add Column</div>
+	</div>
+	
+ 
+  <div>
+  <div id="addRow" class="add">
+    <div id="addRowChild">Add Row</div>
+	</div>
+	
+ 
+    <div>
+    <div id="delColumn" class="add">
+    <div id="delColumnChild">Remove Column</div>
+	</div>
+	
+ <div>
+  <div id="delRow" class="add">
+    <div id="delRowChild">Remove Row</div>
+	</div>
+
+
+<body  onload="javascript:hideTable();hide();hide2();hide3()">
+<div onClick='javascript:show();'  class="add">Hurdles</div>
+<div></div>
+<div onClick='javascript:showTable();'  class="add"> Rewards</div>
+
+<div onClick='javascript:showTable2();' class="add">Starting</div>
+<div onClick='javascript:show3();' class="add">Goal</div>
+<div>	<select id="country">
+			<option value="None" selected >-- Select Background --</option>
+			<option value="url(/static/images/reg.jpg)">SelfAwarness</option>
+			<option value="url(/static/images/self.jpg)">SelfRegulation</option>
+			<option value="url(/static/images/so.jpg)">SocialSkill</option>
+			<option value="url(/static/images/a.jpg)" >Empathy</option>
+			<option value="url(/static/images/mot.jpg)">Motivation</option>
+		</select></div>
+
+<table id='table' border="1" bordercolor="#aaa" style="margin-top:-290px; margin-left:290px;">
+     <tr>
+        <td style="width:100px; height:100px; text-align: center;">
+            <img src="/static/images/B.png"  id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">   
+            
+        </td>   
+		       <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/s1.png"   id="drag2" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">    -->
+            
+        <!-- </td>    -->
+		     <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/s2.png"   id="drag3" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">    -->
+            
+        <!-- </td>    -->
+		
+        
+    <!-- </tr> -->
+    <!-- <tr> -->
+         <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/s3.jpg"  id="drag4" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29"">    -->
+            
+        <!-- </td>    -->
+		       <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/s4.jpg"   id="drag5" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29"">    -->
+            
+        <!-- </td>    -->
+		   <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/s5.jpg"   id="drag6" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">    -->
+            
+        <!-- </td>    -->
+		
+        
+    <!-- </tr> -->
+	    <!-- <tr> -->
+        <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/s6.png"  id="drag7" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">    -->
+            
+        <!-- </td>    -->
+		        <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/s7.jpg"   id="drag8" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">    -->
+            
+        <!-- </td>    -->
+		    <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/s8.png"   id="drag9" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">    -->
+            
+        <!-- </td>    -->
+		
+        
+    </tr>
+    
+    
+</table>
+
+
+<div>
+
+
+
+<table id='table1' border="1" bordercolor="#aaa" style="margin-top:-190px; margin-left:290px;">
+     <tr>
+            <td style="width:100px; height:100px; text-align: center;">
+            <img src="/static/images/c1.jpg"  id="drag10" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">   
+            
+        </td>   
+		             <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/c5.jpg"   id="drag11" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">    -->
+            
+        <!-- </td>    -->
+		          <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/c6.jpg"   id="drag12" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">    -->
+            
+        <!-- </td>    -->
+		
+        
+    <!-- </tr> -->
+    <!-- <tr> -->
+             <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/c2.jpg"  id="drag13" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">    -->
+            
+        <!-- </td>    -->
+		             <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/c3.jpg"   id="drag14" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">    -->
+            
+        <!-- </td>    -->
+		       <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/c4.jpg"   id="drag15" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">    -->
+            
+        <!-- </td>    -->
+		
+        
+    <!-- </tr> -->
+	    <!-- <tr> -->
+            <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/c7.jpg"  id="drag16" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">    -->
+            
+        <!-- </td>    -->
+		           <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/c8.jpg"   id="drag17" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">    -->
+            
+        <!-- </td>    -->
+		         <!-- <td style="width:100px; height:100px; text-align: center;"> -->
+            <!-- <img src="/static/images/c9.jpg"   id="drag18" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29">    -->
+            
+        <!-- </td>    -->
+		
+        
+    </tr>
+    
+    
+</table>
+</div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<table id='table2' border="1" bordercolor="#aaa" style="margin-top:90px; margin-left:290px;">
+   
+	    <tr style="width:100px; height:100px; text-align: center;">
+         
+		        <td>
+            <img src="/static/images/g8.png"   id="drag26" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29"">   
+            
+        </td>   
+		       
+		
+        
+    </tr>
+    
+    
+</table>
+<!-- Starting pics -->
+
+<table id='table3' border="1" bordercolor="#aaa" style="margin-top:-100px; margin-left:290px;">
+     <tr>
+     <td>
+            <img src="/static/images/st5.jpg"  id="drag28" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29"">   
+            
+        </td>  
+		        <!-- <td> -->
+            <!-- <img src="st1.jpg"   id="drag29" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29"">    -->
+            
+        <!-- </td>    -->
+		     <!-- <td> -->
+            <!-- <img src="st2.png"   id="drag30" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29"">    -->
+            
+        <!-- </td>    -->
+		
+        
+    <!-- </tr> -->
+    <!-- <tr> -->
+        <!-- <td> -->
+            <!-- <img src="st14.png"  id="drag31" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29"">    -->
+            
+        <!-- </td>    -->
+		        <!-- <td> -->
+            <!-- <img src="st4.jpg"   id="drag32" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29"">    -->
+            
+        <!-- </td>    -->
+		     <!-- <td> -->
+            <!-- <img src="st5.jpg"   id="drag33" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29"">    -->
+            
+        <!-- </td>    -->
+		
+        
+    <!-- </tr> -->
+	    <!-- <tr> -->
+        <!-- <td> -->
+            <!-- <img src="st6.jpg"  id="drag34" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29"">    -->
+            
+        <!-- </td>    -->
+		        <!-- <td> -->
+            <!-- <img src="st8.jpg"   id="drag35" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29"">    -->
+            
+        <!-- </td>    -->
+		     <!-- <td> -->
+            <!-- <img src="st7.png"   id="drag36" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="46" height="29"">    -->
+            
+        <!-- </td>    -->
+		
+        
+    </tr>
+    
+    
+</table>
+
+<div class="split right">
+     <div class="centered">
+   <table id="my-table"  border="3" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+    <tr id="default-row">
+         <td></td>
+		  <td></td>
+		  <td></td>
+		  <td></td>
+       
+    </tr>
+    <tr>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+    </tr>
+    <tr>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tr>
+	 
+  </table>
+<button onclick="mall()"class="add">Save</button>
+<!-- <button onclick="bgs()">Save bg</button> -->
+<!-- <button onclick="changeDivImage()">chng</button> -->
+	<!-- <button type="button" onclick="changeDivImage()">Get Selected Value</button> -->
+		<button type="button" onclick="GetSelectedValue()"class="add">Change background</button>
+		<!-- <button type="button" onclick="ch()">Get</button> -->
+<!-- <input id="Button1" type="button" value="Click" onclick="switchVisible();"/> -->
+</div>
+</div>
+     
+</body>
+</html> 

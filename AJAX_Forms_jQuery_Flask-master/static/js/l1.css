@@ -1,0 +1,117 @@
+#canvas {
+  align-content: center;
+  height: 100px;
+}
+
+#my-table {
+  /* margin: 0 -2px -2px 0; */
+  /* border: #FFF; */
+  /* border: 1px solid rgb(72, 170, 230); */
+  /* display: inline-block; */
+  /* table-layout: fixed; */
+  /* width: 500; */
+  /* height:500; */
+  /* white-space: nowrap; */
+  width:500px;
+		height:500px;
+     border-collapse: collapse;
+	
+   table-layout: fixed;
+}
+td{
+		
+
+		border:1px solid #ccc;
+	}
+.btn-group button {
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 30%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
+.add {
+  height: 52px;
+  width: 30%;
+  background: rgb(243, 165, 0);
+  cursor: pointer;
+  color: #FFF;
+  text-align: center;
+  font-family:  sans-serif;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+ 
+}
+
+#addColumn {
+  display: inline-block;
+  vertical-align: top;
+  margin: 2px 0 0 0;
+}
+
+.add:hover {
+  background: rgb(246, 192, 82);
+}
+
+#addColumnChild {
+  line-height: 50px;
+}
+
+#addRow {
+   display: inline-block;
+  vertical-align: top;
+  margin: 2px 0 0 0;
+}
+
+#addRowChild {
+  line-height: 50px;
+}
+
+.del {
+  height: 52px;
+  width: 52px;
+  background: rgb(178, 0, 0);
+  cursor: pointer;
+  color: #FFF;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+#delColumn {
+  display: inline-block;
+  vertical-align: top;
+  margin: 2px 0 0 0;
+}
+
+.del:hover {
+  background: rgb(202, 76, 73);
+}
+
+#delColumnChild {
+  line-height: 50px;
+}
+
+#delRow {
+  display: inline-block;
+  vertical-align: top;
+  margin: 2px 0 0 0;
+}
+
+#delRowChild {
+  line-height: 50px;
+}
