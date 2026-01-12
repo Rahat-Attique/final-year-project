@@ -34,7 +34,7 @@
     "gulp-series": "^1.0.2",
     "gulp-shell": "^0.6.5",
     "jshint": "^2.10.1",
-    "webdriverio": "^4.14.1"
+    "webdriverio": "^9.22.0"
   },
   "jshintConfig": {
     "globalstrict": true,
@@ -51,7 +51,7 @@
     "unused": true
   },
   "dependencies": {
-    "jsdom": "^13.2.0",
+    "jsdom": "^27.4.0",
     "webpack": "^4.39.2"
   }
 }
